@@ -1,0 +1,324 @@
+html {
+    font-family: arial, sans-serif;
+    font-size: 112.5%;
+    /* I set the base font size to 18px (1.125rem) based on the font sizing on the actual website. This makes my nav bigger but the rest of the page follows the given screenshots closely. (I coould have applied the font-size to just my main but that would have been bad practice. */
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0%;
+    right: 0%;
+    background-color: #fff;
+    border-top: 1px solid black;
+}
+
+nav a {
+    font-weight: 900;
+    display: block;
+    margin: 16px 0;
+}
+
+nav a:hover {
+    color: red;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    padding: 16px;
+    border-bottom: 1px solid black;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+}
+
+.banner h2 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+h1,
+h2,
+h3,
+nav li,
+.bottom a{
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0 0 0 1rem;
+}
+
+h1 a {
+    color: red;
+    font-weight: 900;
+}
+
+h1,
+.fas,
+.far,
+.fab {
+    /* font-size: 1.5rem; Style applied during class */
+    font-size: 1.2rem; /* Style change to combat the 112.5% font size */
+}
+
+.fab {
+    margin-left: 15px;
+}
+
+h2 {
+    padding: 20px;
+}
+
+h2,
+h3 {
+    font-weight: 900;
+}
+
+h3 {
+    font-size: 1.333rem;
+    padding: 20px 0 10px;
+}
+
+.active {
+    color: red;
+}
+
+.overlay {
+    background: rgba(50, 50, 50, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.locations {
+    background-color: white;
+    padding: 16px;
+    width: 90%;
+    margin: 0 auto;
+    /* margin: 50% auto 0; */
+}
+
+.locations a {
+    /*I didn't know how else to move this */
+    margin-left: 99%;
+}
+
+.fa-angle-down {
+    color: #fff;
+}
+
+
+.banner {
+    background-image: url(../img/banner.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    /*max-height: 600px;
+    height: 100vh;
+    padding: 15% 10% 25%;*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    min-height: 500px;
+    color: white;
+    padding: 15%;
+}
+
+.banner section{
+    width: 50%;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.banner p:first-of-type,
+.locations,
+main li,
+.available {
+    font-family: serif;
+}
+
+.banner p:last-of-type {
+    padding: 30px 0 20px 0;
+    font-weight: 700;
+    font-size: calc(11/18 * 1rem);
+}
+
+.nutrition a {
+    text-decoration: underline;
+}
+
+.nutrition {
+    margin: 15px 0 60px;
+    font-size: 0.6rem;
+    font-weight: 700;
+}
+
+main {
+    padding: 0 3% 60px;
+    text-align: center;
+}
+
+main li {
+    padding: 3px 0;
+}
+
+main li a {
+    padding: 0 5px;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+.wrap,
+main section:nth-child(4) ul {
+    padding-top: 10px;
+}
+
+.available {
+    margin: 20px 0 30px;
+    font-size: calc(15/18 * 1rem);
+}
+
+.hide {
+    display: none; /* I had to add in 2 H2's in the markup to hide otherwise the HTML outliner was gonna be mad at me */
+}
+
+@media (hover:none) {
+    .banner {
+        height: 100vh;
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-btn {
+        display: none;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    nav {
+        display: flex !important;
+        justify-content: flex-end;
+        width: auto;
+        position: static;
+        flex: 1;
+        border-top: none;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin-right: 10px;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+    
+    .banner {
+        justify-content: center;
+    }
+
+    .mobile {
+        display: none;
+    }
+    
+    .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        width: 640px; /* had to change it from 60% to get the toppings/flavors to line up properly */
+        margin: 0 auto; /*my reset.css set my margins to 0, had to add this to fix it*/
+        max-width: 800px;
+        justify-content: center;
+    }
+    
+    .separators li:after {
+        content: '\2022';
+        padding: 0 4px;
+    }
+    
+    /* the five styles below were the only way I was able to have the sandwich toppings and milkshake flavors line up like in the screenshots without having multiple ul's */
+    
+    .separators li:nth-child(5n) {
+        margin-right: 20px;
+    }
+    
+    .separators li:first-child,
+    .separators li:nth-child(6) {
+        margin-left: 20px;
+    }
+    
+    .milkshakes li:nth-child(5){
+        margin-right: 40px;
+    }
+    
+    .milkshakes li:first-child {
+        margin-left: 40px;
+    }
+    
+    .milkshakes li:last-child {
+        margin: 0;
+    }
+    
+    .separators li:last-child:after,
+    .separators li:nth-child(5n):after
+    {
+        content: '';
+    }
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nutrition {
+        width: 100%;
+        text-align: right;
+    }
+
+}
+
+@media (min-width: 990px) {
+    main > div {
+        display: flex;
+        margin-bottom: 50px;
+    }
+    
+    main > div section {
+        margin: 0 70px;
+    }
+}
